@@ -1,0 +1,39 @@
+int voucherValue = int.Parse(Console.ReadLine());
+int remainingVoucher = voucherValue;
+int ticketsBought = 0;
+int otherPurchases = 0;
+
+while (true)
+{
+    string purchase = Console.ReadLine();
+
+    if (purchase == "End" || remainingVoucher == 0)
+    {
+        break;
+    }
+
+    int purchasePrice = 0;
+    if (purchase.Length > 8)
+    {
+        purchasePrice = (int)purchase[0] + (int)purchase[1];
+    }
+    else
+    {
+        purchasePrice = (int)purchase[0];
+    }
+    if (purchasePrice > remainingVoucher)
+    {
+        break;
+    }
+    remainingVoucher -= purchasePrice;
+    if (purchase.Length > 8)
+    {
+        ticketsBought++;
+    }
+    else
+    {
+        otherPurchases++;
+    }
+}
+Console.WriteLine(ticketsBought);
+Console.WriteLine(otherPurchases);
