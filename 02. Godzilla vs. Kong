@@ -1,0 +1,22 @@
+double budget = double.Parse(Console.ReadLine());
+int numOfStatics = int.Parse(Console.ReadLine());
+double singleStatClothesPrice = double.Parse(Console.ReadLine());
+double totalPriceClothes = numOfStatics * singleStatClothesPrice;
+
+double decorPrice = budget * 0.10;
+if (numOfStatics > 150)
+{
+    totalPriceClothes -= totalPriceClothes * 0.10;
+}
+
+double totalNeeded = totalPriceClothes + decorPrice;
+if (totalNeeded <= budget)
+{
+    Console.WriteLine("Action!");
+    Console.WriteLine($"Wingard starts filming with {budget - totalNeeded:F2} leva left.");
+}
+else
+{
+    Console.WriteLine("Not enough money!");
+    Console.WriteLine($"Wingard needs {totalNeeded - budget:F2} leva more.");
+}
