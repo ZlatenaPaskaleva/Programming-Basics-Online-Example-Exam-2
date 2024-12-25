@@ -1,0 +1,9 @@
+double rent = double.Parse(Console.ReadLine());
+
+double statue = rent - (rent * 0.30);
+double service = statue - (statue * 0.15);
+double sound = service / 2;
+
+double totalExpenses = rent + statue + service + sound;
+
+Console.WriteLine($"{totalExpenses:f2}");
