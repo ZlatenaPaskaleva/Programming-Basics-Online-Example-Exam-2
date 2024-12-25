@@ -1,0 +1,29 @@
+int numOfMovies = int.Parse(Console.ReadLine());
+
+double maxReiting = double.MinValue;
+string movieMaxR = string.Empty;
+double minReiting = double.MaxValue;
+string movieMinR = string.Empty;
+double totalReit = 0;
+for (int i = 0;i < numOfMovies; i++)
+{
+    string movie = Console.ReadLine();
+    double reiting = double.Parse(Console.ReadLine());
+    if (reiting > maxReiting)
+    {
+        maxReiting = reiting;
+        movieMaxR = movie;
+    }
+    else if (reiting < minReiting)
+    {
+        minReiting = reiting;
+        movieMinR = movie;
+    }
+    totalReit += reiting;
+}
+
+double avgReit = totalReit / (double)numOfMovies;
+
+Console.WriteLine($"{movieMaxR} is with highest rating: {maxReiting:f1}");
+Console.WriteLine($"{movieMinR} is with lowest rating: {minReiting:f1}");
+Console.WriteLine($"Average rating: {avgReit:F1}");
